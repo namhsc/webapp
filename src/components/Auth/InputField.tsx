@@ -20,7 +20,7 @@ const InputField = ({
     fontSize: '1.3em',
   };
 
-  function InputCase(props: { name: any }) {
+  function InputCase(props: { name: string }) {
     switch (props.name) {
       case 'name':
         return (

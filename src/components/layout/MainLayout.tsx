@@ -246,10 +246,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </li>
             </ul>
             <div className='fixed bottom-0 flex w-24 flex-wrap justify-center bg-gray-100 p-6'>
-              <img
-                src='flex-ui-assets/images/dashboard/navigations/avatar.png'
-                alt=''
-              />
+              <div>Anh</div>
             </div>
           </div>
         </div>

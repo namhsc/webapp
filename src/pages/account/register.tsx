@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
@@ -31,7 +32,6 @@ const Register = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm<RegisterPayload>({
     resolver: yupResolver(registerSchema),
@@ -54,9 +54,7 @@ const Register = () => {
             break;
         }
       },
-      onError: () => {
-        console.log('Registration failed');
-      },
+      onError: () => {},
     }
   );
 

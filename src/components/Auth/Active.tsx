@@ -66,7 +66,6 @@ const Active: React.FC<Props> = ({ email }) => {
       onError: () => {
         reset();
         router.push('/account/register');
-        console.log('Registration failed');
       },
     }
   );

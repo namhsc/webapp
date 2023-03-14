@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ImSpinner6 } from 'react-icons/im';
@@ -19,13 +19,11 @@ type Props = {
 };
 
 const ConfirmPassword: React.FC<Props> = ({ email }) => {
-  const router = useRouter();
   const [counter, setCounter] = useState(60);
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm<ConfirmPasswordPayload>({
     resolver: yupResolver(confirmPasswordSchema),
@@ -34,9 +32,7 @@ const ConfirmPassword: React.FC<Props> = ({ email }) => {
   const { mutate, isLoading } = useMutation(
     (payload: ConfirmPasswordPayload) => confirmAccountApi(payload),
     {
-      onSuccess: (data) => {
-        console.log('data :>> ', data.statusCode);
-      },
+      onSuccess: () => {},
       onError: () => {},
     }
   );

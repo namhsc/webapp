@@ -14,7 +14,6 @@ import { loginApi } from '@/apis/authApi';
 import {
   EMAIL_NOT_ACTIVATE,
   LOGIN_INCORRECT,
-  LOGIN_SUCCESS,
 } from '@/constant/message.constant';
 import { loginSchema } from '@/schemas/auth.schema';
 
@@ -48,7 +47,6 @@ const Login = () => {
       onSuccess: async (data) => {
         switch (data.statusCode) {
           case 0:
-            console.log(LOGIN_SUCCESS);
             router.push('/');
             break;
           case 5:
@@ -64,7 +62,6 @@ const Login = () => {
         reset();
       },
       onError: () => {
-        console.log('Login failed');
         reset();
       },
     }
