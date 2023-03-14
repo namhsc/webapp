@@ -30,12 +30,22 @@ export default function HomePage() {
         <section className='bg-white'>
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
             <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
-              Next.js + Tailwind CSS + TypeScript Starter
-            </h1>
-            <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
+            <h1 className='mt-4'>Cộng hòa xã hội chủ nghĩa Việt Nam</h1>
+            <p className='mt-2  text-gray-800'>
+              Cách đây 4 ngày, Al Nassr gây thất vọng khi để thua Al Ittihad ở
+              Saudi Pro League. Ronaldo và các đồng đội bế tắc trong suốt 90
+              phút và chấp nhận trắng tay bởi pha lập công duy nhất của
+              Romarinho cuối trận. Đó mới chỉ là trận thua thứ hai của Al Nassr
+              mùa này, chấm dứt chuỗi 18 trận bất bại, nhưng tai hại hơn là Al
+              Nassr rơi xuống vị trí thứ hai và kém Al Ittihad 1 điểm trên bảng
+              xếp hạng Saudi Pro League. Sự tập trung của Al Nassr giờ sẽ chuyển
+              sang Cúp Nhà vua Saudi Arabia, giải đấu mà họ đã không thể vô địch
+              kể từ năm 1990. Phía bên kia, Abha đã không thắng 5 trận gần nhất.
+              Họ thua 4 trận liên tiếp trước khi hòa 2-2 với Al Fateh. Đây sẽ là
+              cơ hội để Al Nassr lấy lại tự tin sau trận thua ở Saudi Pro
+              League. Đặc biệt là với Ronaldo, sau 1 tuần thăng hoa 2 hat-trick
+              và 2 pha kiến ​​tạo, tiền đạo 38 tuổi chưa có bàn nào ở 2 trận gần
+              nhất.
             </p>
             <p className='mt-2 text-sm text-gray-700'>
               <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
