@@ -25,10 +25,10 @@ const InputField = ({
       case 'name':
         return (
           <div
-            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-green-500 bg-green-100 ${
+            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-primary-500 bg-primary-100 ${
               errors[name]
                 ? 'border border-red-700 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-                : 'border border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+                : 'border border-primary-500 bg-primary-50 text-primary-900 placeholder-primary-700 focus:border-primary-500 focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
             }`}
           >
             <BiUserCircle style={style} />
@@ -37,10 +37,10 @@ const InputField = ({
       case 'username':
         return (
           <div
-            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-green-500 bg-green-100 ${
+            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-primary-500 bg-primary-100 ${
               errors[name]
                 ? 'border border-red-700 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-                : 'border border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+                : 'border border-primary-500 bg-primary-50 text-primary-900 placeholder-primary-700 focus:border-primary-500 focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
             }`}
           >
             <BiUserCircle style={style} />
@@ -49,10 +49,10 @@ const InputField = ({
       case 'email':
         return (
           <div
-            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-green-500 bg-green-100 ${
+            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-primary-500 bg-primary-100 ${
               errors[name]
                 ? 'border border-red-700 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-                : 'border border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+                : 'border border-primary-500 bg-primary-50 text-primary-900 placeholder-primary-700 focus:border-primary-500 focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
             }`}
           >
             <MdOutlineAlternateEmail style={style} />
@@ -61,10 +61,10 @@ const InputField = ({
       case 'password':
         return (
           <div
-            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-green-500 bg-green-100 ${
+            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-primary-500 bg-primary-100 ${
               errors[name]
                 ? 'border border-red-700 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-                : 'border border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+                : 'border border-primary-500 bg-primary-50 text-primary-900 placeholder-primary-700 focus:border-primary-500 focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
             }`}
           >
             <BiLock style={style} />
@@ -73,10 +73,10 @@ const InputField = ({
       case 'confirmPassword':
         return (
           <div
-            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-green-500 bg-green-100 ${
+            className={`absolute top-0 left-0 flex h-full w-12 items-center justify-center rounded-l-lg border border-primary-500 bg-primary-100 ${
               errors[name]
                 ? 'border border-red-700 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-                : 'border border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+                : 'border border-primary-500 bg-primary-50 text-primary-900 placeholder-primary-700 focus:border-primary-500 focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
             }`}
           >
             <BiLock style={style} />
@@ -90,7 +90,7 @@ const InputField = ({
     <div className='mb-3'>
       <label
         htmlFor={name}
-        className={`mb-1 block select-none text-sm font-medium focus:outline-none ${
+        className={`label mb-1 block select-none font-medium focus:outline-none ${
           errors[name] ? 'text-red-700 dark:text-red-500' : 'text-black'
         } } after:ml-1 after:text-red-600 after:content-['*']`}
       >
@@ -105,7 +105,7 @@ const InputField = ({
           className={`block w-full rounded-lg py-2.5 pr-2.5 pl-14 font-medium focus-within:outline-none focus:outline-none ${
             errors[name]
               ? ' border border-red-700 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-              : ' border border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+              : ' border border-primary-500 bg-primary-50 text-primary-900 placeholder-primary-700 focus:border-primary-500 focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
           }`}
           {...register(name)}
         />
@@ -122,7 +122,7 @@ const InputField = ({
         )}
       </div>
       {errors[name] && (
-        <p className='mt-2 text-sm font-medium text-red-700 dark:text-red-500'>
+        <p className=' mt-2 text-sm font-medium text-red-700 dark:text-red-500'>
           <span className='font-medium'>{errors[name].message}</span>
         </p>
       )}

@@ -4,11 +4,11 @@ import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ImSpinner6 } from 'react-icons/im';
 import { toast } from 'react-toastify';
 
-import { InputField } from '@/components/Auth';
-import Active from '@/components/Auth/Active';
+import Active from '@/components/auth/Active';
+import InputField from '@/components/auth/InputField';
+import Button from '@/components/myComponents/Button';
 
 import { registerApi } from '@/apis/authApi';
 import { EMAIL_EXIST, ERROR } from '@/constant/message.constant';
@@ -69,11 +69,11 @@ const Register = () => {
     return <Active email={email} />;
   } else {
     return (
-      <div className='flex h-screen items-center justify-center bg-green-500'>
+      <div className='flex h-screen items-center justify-center bg-primary-50'>
         <div className='w-11/12 rounded-lg bg-white pt-5 shadow-md md:w-[450px]'>
           <div className='w-full'>
             <div className='flex w-full flex-col items-center text-center'>
-              <Logo />
+              <Logo className='text-5xl' />
               <h3 className='pt-5 text-2xl font-bold md:text-3xl'>
                 Đăng ký tài khoản
               </h3>
@@ -102,11 +102,11 @@ const Register = () => {
                 type='password'
                 name='password'
               />
-              <div className='select-none text-sm font-medium text-black'>
-                <label className='inline-flex cursor-pointer items-center'>
+              <div className='label select-none text-sm font-medium text-black'>
+                <label className=' inline-flex cursor-pointer items-center'>
                   <input
                     type='checkbox'
-                    className='mr-2 h-4 w-4 cursor-pointer accent-green-600'
+                    className='checked mr-2 h-4 w-4 cursor-pointer text-primary-500 focus:ring-primary-500'
                     checked={isChecked}
                     onChange={handleCheckboxChange}
                   />
@@ -114,28 +114,12 @@ const Register = () => {
                 </label>
               </div>
 
-              {isLoading ? (
-                <button
-                  disabled
-                  type='button'
-                  className='mt-3 mb-2 inline-block w-full cursor-not-allowed rounded-md bg-green-600 py-3 px-7 text-center text-base font-medium leading-6 text-green-50 shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-600 focus:ring-opacity-50'
-                >
-                  <ImSpinner6 className='mr-3 inline h-5 w-5 animate-spin' />
-                  Đăng ký
-                </button>
-              ) : (
-                <button
-                  type='submit'
-                  className='mt-3 mb-2 inline-block w-full rounded-md bg-green-500 py-3 px-7 text-center text-base font-medium leading-6 text-white shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50'
-                >
-                  Đăng ký
-                </button>
-              )}
+              <Button type='submit' isLoading={isLoading} text='Đăng ký' />
             </form>
             <div className='mt-2 flex justify-center text-sm'>
-              <div className='mr-2  font-medium'>Bạn đã có tài khoản?</div>
+              <div className='mr-2'>Bạn đã có tài khoản?</div>
               <Link href='/account/login'>
-                <div className='font-bold text-green-500'>Đăng nhập</div>
+                <div className='font-semibold text-primary-500'>Đăng nhập</div>
               </Link>
             </div>
           </div>

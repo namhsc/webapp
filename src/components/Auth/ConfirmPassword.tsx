@@ -3,11 +3,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ImSpinner6 } from 'react-icons/im';
 
-import { InputField } from '@/components/Auth';
+import InputField from '@/components/auth/InputField';
+import Button from '@/components/myComponents/Button';
 
-import { confirmAccountApi, resetOtpApi } from '@/apis/authApi';
+import { confirmPassword, resetOtpApi } from '@/apis/authApi';
 import { confirmPasswordSchema } from '@/schemas/auth.schema';
 
 import { ConfirmPasswordPayload } from '@/types/Auth';
@@ -30,7 +30,8 @@ const ConfirmPassword: React.FC<Props> = ({ email }) => {
   });
 
   const { mutate, isLoading } = useMutation(
-    (payload: ConfirmPasswordPayload) => confirmAccountApi(payload),
+    (payload: ConfirmPasswordPayload) =>
+      confirmPassword(payload.email, payload.otp, payload.password),
     {
       onSuccess: () => {},
       onError: () => {},
@@ -58,7 +59,7 @@ const ConfirmPassword: React.FC<Props> = ({ email }) => {
   }, [counter]);
 
   return (
-    <div className='flex h-screen items-center justify-center bg-green-500 '>
+    <div className='flex h-screen items-center justify-center bg-primary-500 '>
       <div className='w-11/12 rounded-lg bg-white pt-5 shadow-md md:w-[450px]'>
         <div className='w-full'>
           <div className='flex w-full flex-col items-center text-center'>
@@ -99,7 +100,7 @@ const ConfirmPassword: React.FC<Props> = ({ email }) => {
                   className={`${
                     errors.otp
                       ? 'font-base focus:outline:none mr-2 block w-3/5 rounded-lg border border-red-700 bg-red-50 p-2.5 text-center text-xl font-medium tracking-[10px] text-red-900 placeholder-gray-300 placeholder:font-extrabold focus-within:outline-none focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-                      : 'font-base mr-2 block w-3/5 rounded-lg border border-green-500 bg-green-50 p-2.5 text-center text-xl font-medium tracking-[10px] text-green-900 placeholder-gray-300 placeholder:font-extrabold focus-within:outline-none focus:border-green-500 focus:outline-none focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+                      : 'font-base mr-2 block w-3/5 rounded-lg border border-primary-500 bg-primary-50 p-2.5 text-center text-xl font-medium tracking-[10px] text-primary-900 placeholder-gray-300 placeholder:font-extrabold focus-within:outline-none focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
                   }`}
                   type='text'
                   placeholder='______'
@@ -113,7 +114,7 @@ const ConfirmPassword: React.FC<Props> = ({ email }) => {
                   className={`${
                     counter
                       ? ' pointer-events-none cursor-not-allowed select-none border border-gray-300 bg-white text-gray-400 hover:bg-gray-200 focus:ring-gray-500 '
-                      : ' cursor-pointer bg-green-500 text-white hover:bg-green-600 focus:ring-green-500 '
+                      : ' cursor-pointer bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 '
                   } w-2/5 rounded-md py-3 text-center text-base font-medium leading-6 shadow-sm focus:ring-2 focus:ring-opacity-50`}
                 >
                   {counter ? `Gửi lại OTP sau ${counter}s` : 'Gửi lại OTP'}
@@ -124,23 +125,7 @@ const ConfirmPassword: React.FC<Props> = ({ email }) => {
               </p>
             </div>
 
-            {isLoading ? (
-              <button
-                disabled
-                type='button'
-                className='mt-3 mb-2 inline-block w-full cursor-not-allowed rounded-md bg-green-600 py-3 px-7 text-center text-base font-medium leading-6 text-green-50 shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-600 focus:ring-opacity-50'
-              >
-                <ImSpinner6 className='mr-3 inline h-5 w-5 animate-spin' />
-                Xác nhận
-              </button>
-            ) : (
-              <button
-                type='submit'
-                className='mt-3 mb-2 inline-block w-full rounded-md bg-green-500 py-3 px-7 text-center text-base font-medium leading-6 text-white shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50'
-              >
-                Xác nhận
-              </button>
-            )}
+            <Button type='submit' isLoading={isLoading} text='Xác nhận' />
           </form>
         </div>
       </div>

@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface User {
-  id: number;
-  name: string;
-  email: string;
+  username: string;
   password: string;
 }
+export interface AuthContextProps {
+  user: User | null;
+}
+
 export interface InputProps {
   label: string;
   register: any;

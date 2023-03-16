@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Cookies from 'js-cookie';
 
 import {
   ConfirmAccountPayload,
   ConfirmAccountResponse,
+  ConfirmPasswordResponse,
   LoginResponse,
   ResetOtpResponse,
   SendEmailResponse,
@@ -47,15 +49,24 @@ export const loginApi = async ({
   });
 };
 
-// export const confirmPassword = async (
-// 	password: string,
-// 	token: string,
-// ): Promise<void> => {
-// 	await axiosClient.post('/auth/confirm-password', { password, token });
-// };
+export const confirmPassword = async (
+  email: string,
+  otp: string,
+  password: string
+): Promise<ConfirmPasswordResponse> => {
+  return await axiosClient.post('/auth/confirm-password', {
+    email,
+    otp,
+    password,
+  });
+};
 
 export const forgotPassword = async (
   email: string
 ): Promise<SendEmailResponse> => {
   return await axiosClient.post(`/auth/forgot-password?email=${email}`);
+};
+
+export const getUserInfo = async (): Promise<any> => {
+  return await axiosClient.get('/auth/users');
 };

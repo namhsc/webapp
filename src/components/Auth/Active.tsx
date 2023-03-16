@@ -91,7 +91,7 @@ const Active: React.FC<Props> = ({ email }) => {
 
   if (email) {
     return (
-      <div className='flex h-screen items-center justify-center bg-green-500'>
+      <div className='flex h-screen items-center justify-center bg-primary-500'>
         <div className='w-11/12 rounded-lg bg-white pt-5 shadow-md md:w-[450px]'>
           <div className='mb-14 h-[130px] w-full'>
             <div className='flex w-full flex-col items-center text-center'>
@@ -130,7 +130,7 @@ const Active: React.FC<Props> = ({ email }) => {
                     className={`${
                       errors.otp
                         ? 'font-base focus:outline:none mr-2 block w-3/5 rounded-lg border border-red-700 bg-red-50 p-2.5 text-center text-xl font-medium tracking-[10px] text-red-900 placeholder-gray-300 placeholder:font-extrabold focus-within:outline-none focus:border-red-700 focus:ring-red-500 dark:border-red-400 dark:bg-red-100'
-                        : 'font-base mr-2 block w-3/5 rounded-lg border border-green-500 bg-green-50 p-2.5 text-center text-xl font-medium tracking-[10px] text-green-900 placeholder-gray-300 placeholder:font-extrabold focus-within:outline-none focus:border-green-500 focus:outline-none focus:ring-green-500 dark:border-green-400 dark:bg-green-100'
+                        : 'font-base mr-2 block w-3/5 rounded-lg border border-primary-500 bg-primary-50 p-2.5 text-center text-xl font-medium tracking-[10px] text-primary-900 placeholder-gray-300 placeholder:font-extrabold focus-within:outline-none focus:border-primary-500 focus:outline-none focus:ring-primary-500 dark:border-primary-400 dark:bg-primary-100'
                     }`}
                     type='text'
                     placeholder='______'
@@ -144,7 +144,7 @@ const Active: React.FC<Props> = ({ email }) => {
                     className={`${
                       counter
                         ? ' pointer-events-none cursor-not-allowed select-none border border-gray-300 bg-white text-gray-400 hover:bg-gray-200 focus:ring-gray-500 '
-                        : ' cursor-pointer bg-green-500 text-white hover:bg-green-600 focus:ring-green-500 '
+                        : ' cursor-pointer bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 '
                     } w-2/5 rounded-md py-3 text-center text-base font-medium leading-6 shadow-sm focus:ring-2 focus:ring-opacity-50`}
                   >
                     {counter ? `Gửi lại OTP sau ${counter}s` : 'Gửi lại OTP'}
@@ -159,7 +159,7 @@ const Active: React.FC<Props> = ({ email }) => {
                 <button
                   disabled
                   type='button'
-                  className='mt-3 mb-2 inline-block w-full cursor-not-allowed rounded-md bg-green-600 py-3 px-7 text-center text-base font-medium leading-6 text-green-50 shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-600 focus:ring-opacity-50'
+                  className='mt-3 mb-2 inline-block w-full cursor-not-allowed rounded-md bg-primary-600 py-3 px-7 text-center text-base font-medium leading-6 text-primary-50 shadow-sm hover:bg-primary-600 focus:ring-2 focus:ring-primary-600 focus:ring-opacity-50'
                 >
                   <ImSpinner6 className='mr-3 inline h-5 w-5 animate-spin' />
                   Xác nhận
@@ -167,7 +167,7 @@ const Active: React.FC<Props> = ({ email }) => {
               ) : (
                 <button
                   type='submit'
-                  className='mt-3 mb-2 inline-block w-full rounded-md bg-green-500 py-3 px-7 text-center text-base font-medium leading-6 text-white shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50'
+                  className='mt-3 mb-2 inline-block w-full rounded-md bg-primary-500 py-3 px-7 text-center text-base font-medium leading-6 text-white shadow-sm hover:bg-primary-600 focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50'
                 >
                   Xác nhận
                 </button>

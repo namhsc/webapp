@@ -9,8 +9,10 @@ import { ToastContainer } from 'react-toastify';
 import '@/styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Shield } from '@/components/Auth/Shield';
+import { Shield } from '@/components/auth/Shield';
 import { EmptyLayout } from '@/components/layout/EmptyLayout';
+
+import { AuthProvider } from '@/contexts/authContext';
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -33,16 +35,18 @@ const App: NextPage<AppProps> = ({
   const Layout = Component.Layout || EmptyLayout;
   return (
     <div className={roboto.className}>
-      <Layout>
-        <QueryClientProvider client={queryClient}>
-          <Shield>
-            <NextNProgress />
-            <Component {...pageProps} />
-            <ReactQueryDevtools initialIsOpen={false} />
-            <ToastContainer />
-          </Shield>
-        </QueryClientProvider>
-      </Layout>
+      <AuthProvider>
+        <Layout>
+          <QueryClientProvider client={queryClient}>
+            <Shield>
+              <NextNProgress />
+              <Component {...pageProps} />
+              <ReactQueryDevtools initialIsOpen={false} />
+              <ToastContainer />
+            </Shield>
+          </QueryClientProvider>
+        </Layout>
+      </AuthProvider>
     </div>
   );
 };

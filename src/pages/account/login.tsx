@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ImSpinner6 } from 'react-icons/im';
 import { toast } from 'react-toastify';
 
-import { InputField } from '@/components/Auth';
+import InputField from '@/components/auth/InputField';
+import Button from '@/components/myComponents/Button';
 
 import { loginApi } from '@/apis/authApi';
 import {
@@ -82,7 +82,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className='flex h-screen items-center justify-center bg-green-500 '>
+    <div className='flex h-screen items-center justify-center bg-primary-50 '>
       <div className='w-11/12 rounded-lg bg-white pt-5 shadow-md md:w-[450px]'>
         <div className='w-full'>
           <div className='flex w-full flex-col items-center text-center'>
@@ -108,46 +108,30 @@ const Login = () => {
               type='password'
               name='password'
             />
-            <div className='flex select-none justify-between text-sm font-medium text-black'>
+            <div className='label flex select-none justify-between text-sm font-medium text-black'>
               <label className='inline-flex cursor-pointer items-center'>
                 <input
                   type='checkbox'
-                  className='mr-2 h-4 w-4 cursor-pointer accent-green-600'
+                  className='checked mr-2 h-4 w-4 cursor-pointer text-primary-500 focus:ring-primary-500'
                   checked={rememberMe}
                   onChange={handleRememberMe}
                 />
                 Ghi nhớ
               </label>
               <Link href='/account/forgot'>
-                <div className='inline-flex cursor-pointer items-center font-bold text-green-500'>
+                <div className='inline-flex cursor-pointer items-center font-bold text-primary-500'>
                   Quên mật khẩu
                 </div>
               </Link>
             </div>
 
-            {isLoading ? (
-              <button
-                disabled
-                type='button'
-                className='mt-3 mb-2 inline-block w-full cursor-not-allowed rounded-md bg-green-600 py-3 px-7 text-center text-base font-medium leading-6 text-green-50 shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-600 focus:ring-opacity-50'
-              >
-                <ImSpinner6 className='mr-3 inline h-5 w-5 animate-spin' />
-                Đăng nhập
-              </button>
-            ) : (
-              <button
-                type='submit'
-                className='mt-3 mb-2 inline-block w-full rounded-md bg-green-500 py-3 px-7 text-center text-base font-medium leading-6 text-white shadow-sm hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50'
-              >
-                Đăng nhập
-              </button>
-            )}
+            <Button type='submit' isLoading={isLoading} text='Đăng nhập' />
           </form>
 
           <div className='mt-2 flex justify-center text-sm'>
-            <div className='mr-2  font-medium'>Bạn chưa có tài khoản?</div>
+            <div className='mr-2 '>Bạn chưa có tài khoản?</div>
             <Link href='/account/register'>
-              <div className='font-bold text-green-500'>Đăng ký</div>
+              <div className='font-semibold text-primary-500'>Đăng ký</div>
             </Link>
           </div>
         </div>

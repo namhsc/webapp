@@ -253,7 +253,7 @@
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #064e3b */
 }
 
-.green {
+.primary {
   --tw-color-primary-50: 240 253 244;
   --tw-color-primary-100: 220 252 231;
   --tw-color-primary-200: 187 247 208;
